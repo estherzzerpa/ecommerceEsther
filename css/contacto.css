@@ -47,8 +47,7 @@ html{
     justify-content: space-between;
     background-color: var(--blanco);
     z-index: 2;
-    box-shadow: 1px 1px 10px;
-
+    box-shadow: 1px 1px 2px rgba(1,1,1,.2);
 }
 
 .menu__logo{
@@ -63,8 +62,9 @@ html{
     list-style: none;
     align-items: center;
     width: 100%;
+    height: 50px;
     grid-gap: 1.5rem;   
-
+    flex-grow: 1;
 }
 
 .menu__opciones_lista li{
@@ -73,11 +73,10 @@ html{
 }
 
 
-
 .menu__productos__desplegable ul{
     list-style: none;
     position: absolute;
-    width: fit-content;
+    width: 180px;
     display: none;
     height: 180px;
     background-color: var(--blanco);
@@ -85,9 +84,9 @@ html{
 
 }
 .menu__productos__desplegable ul li a{
-    font-size: 1.3rem;
-    margin: 5px;
-    padding-top: 30px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+   
 }
 
 .menu__productos__desplegable ul li {
@@ -111,7 +110,6 @@ html{
 .menu__opciones_lista > li a:after{
     position: absolute;
     transition: all .5s ease;   
-
     content: "";
     height: 3px;
     background-color: var(--color-fuerte);
@@ -123,7 +121,6 @@ html{
 .menu__opciones_lista > a:hover{
     color: var(--color-fuerte);
 }
-
 
 .menu__opciones_lista li a:hover:after{
     width: 100%;
@@ -175,6 +172,7 @@ html{
     border: none;
     margin-top: 80px;
     cursor: pointer;
+
 }
 
 .container__bag:hover .bag {
@@ -186,7 +184,6 @@ html{
     cursor: pointer;
     margin-right: 20px;
 }
-
 
   /* CONTENIDO */
 
@@ -405,6 +402,7 @@ button:hover{
 
 
     .container__opciones{
+        display: none;
         position: absolute;
         padding: 40px 10px;
         right: 0;
@@ -412,11 +410,12 @@ button:hover{
         bottom: 0;
         width: 100vw;
         z-index: 9;
-        background-color: rgba(230, 219, 219, 0.877);
+        background-color: rgba(230, 219, 219, 0.1);
         backdrop-filter:5px;
+        filter: blur(4);
         height: 100vh;
-        transform: translateY(-100%);
-        transition: all 2s ease;
+        backdrop-filter: blur(5px);
+        /* -webkit-backdrop-filter: blur(5px); */
     }
 
     .container__opciones  li, .container__opciones a {
@@ -429,6 +428,7 @@ button:hover{
         text-align: center;
         font-size: 22px;
         transition: all 0.3s ease-in;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.815);
     }
 
     .container__opciones li:hover {
